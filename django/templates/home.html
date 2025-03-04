@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block styles %}
+<style>
+    body {
+        background-color: #f0f0f0;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: top;
+        height: 80vh;
+        width: 800px;
+        margin-top: 50px;
+        background-color: antiquewhite;
+        padding: 20px
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div>
+        <h2>Home</h2>
+
+        <p>This is the home page</p>
+        <p>
+            {{response}}</p>
+    </div>
+</div>
+
+{% endblock %}

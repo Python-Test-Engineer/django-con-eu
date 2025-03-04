@@ -1,0 +1,160 @@
+{
+   "editor.tokenColorCustomizations": {
+      "comments": "#FFA500"
+   },
+   "window.zoomLevel": 1,
+   "editor.fontSize": 18,
+   "editor.lineHeight": 25,
+   "terminal.integrated.fontSize": 20,
+   "python.terminal.activateEnvironment": true,
+   "editor.renderLineHighlight": "all",
+   "editor.renderWhitespace": "selection",
+   "editor.insertSpaces": true,
+   "editor.tabSize": 4,
+   "editor.tabCompletion": "on",
+   "editor.wordWrap": "on",
+   "workbench.sideBar.location": "right",
+   "editor.autoClosingBrackets": "always",
+   "workbench.tree.indent": 20,
+   "editor.wordWrapColumn": 150,
+   "editor.rulers": [
+      150
+   ],
+   "editor.fontWeight": 500,
+   "editor.fontFamily": "Consolas",
+   "editor.minimap.maxColumn": 80,
+   "editor.minimap.renderCharacters": false,
+   "editor.minimap.showSlider": "always",
+   "editor.multiCursorModifier": "ctrlCmd",
+   "workbench.startupEditor": "none",
+   "html.format.templating": true,
+   "workbench.iconTheme": "vscode-icons",
+   "editor.foldingMaximumRegions": 10000,
+   "editor.accessibilitySupport": "off",
+   "editor.linkedEditing": true,
+   "git.confirmSync": false,
+   "diffEditor.wordWrap": "on",
+   "git.autofetch": true,
+   "[json]": {
+      "editor.defaultFormatter": "vscode.json-language-features"
+   },
+   "indentRainbow.includedLanguages": [],
+   "indentRainbow.excludedLanguages": [],
+   "indentRainbow.updateDelay": 100,
+   "indentRainbow.colors": [
+      "rgba(16,16,16,0.1)",
+      "rgba(16,16,16,0.3)",
+      "rgba(16,16,16,0.6)",
+      "rgba(16,16,16,0.4)",
+      "rgba(16,16,16,0.2)"
+   ],
+   "indentRainbow.errorColor": "rgba(128,32,32,0.6)",
+   "indentRainbow.tabmixColor": "rgba(128,32,96,0.6)",
+   "better-comments.tags": [
+      {
+         "tag": "!",
+         "color": "#FFA500",
+         "strikethrough": false,
+         "underline": false,
+         "backgroundColor": "#676767",
+         "bold": true,
+         "italic": false
+      },
+      {
+         "tag": "?",
+         "color": "#2196f3",
+         "strikethrough": false,
+         "underline": false,
+         "backgroundColor": "#ffffff",
+         "bold": true,
+         "italic": false,
+         "fontSize": "44px"
+      },
+      {
+         "tag": "//",
+         "color": "##2196F3",
+         "strikethrough": true,
+         "underline": false,
+         "backgroundColor": "transparent",
+         "bold": true,
+         "italic": false
+      },
+      {
+         "tag": "todo",
+         "color": "#2196F3",
+         "strikethrough": false,
+         "underline": false,
+         "backgroundColor": "transparent",
+         "bold": true,
+         "italic": false,
+         "fontSize": "32px"
+      },
+      {
+         "tag": "*",
+         "color": "#00FF00",
+         "strikethrough": false,
+         "underline": false,
+         "backgroundColor": "#676767",
+         "bold": true,
+         "italic": false
+      }
+   ],
+   "[html]": {
+      "editor.defaultFormatter": "vscode.html-language-features"
+   },
+   "security.workspace.trust.untrustedFiles": "open",
+   "editor.largeFileOptimizations": false,
+   "git.enableSmartCommit": true,
+   "notebook.cellToolbarLocation": {
+      "default": "right",
+      "jupyter-notebook": "right"
+   },
+   "editor.dropIntoEditor.enabled": false,
+   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+   "jupyter.askForKernelRestart": false,
+   "files.autoSave": "afterDelay",
+   "editor.formatOnPaste": true,
+   "editor.formatOnType": true,
+   "[pip-requirements]": {},
+   "editor.mouseWheelZoom": true,
+   "jupyter.widgetScriptSources": [
+      "jsdelivr.com",
+      "unpkg.com"
+   ],
+   "redhat.telemetry.enabled": true,
+   "[python]": {
+      "editor.formatOnType": true,
+      "editor.defaultFormatter": "ms-python.black-formatter"
+   },
+   "workbench.editorAssociations": {
+      "*.exe": "default"
+   },
+   "[jsonc]": {
+      "editor.defaultFormatter": "vscode.json-language-features"
+   },
+   "jupyter.interactiveWindow.creationMode": "perFile",
+   "git.openRepositoryInParentFolders": "never",
+   "notebook.output.textLineLimit": 100,
+   "notebook.output.scrolling": true,
+   "editor.formatOnSave": true,
+   "notebook.formatOnSave.enabled": true,
+   "liveServer.settings.donotShowInfoMsg": true,
+   "rainbow_csv.enable_auto_csv_lint": false,
+   "vsicons.dontShowNewVersionMessage": true,
+   "python.analysis.typeCheckingMode": "strict",
+   "python.formatting.provider": "none",
+   "editor.autoIndent": "keep",
+   "workbench.colorTheme": "Default High Contrast",
+   "terminal.integrated.defaultProfile.windows": "PowerShell",
+   "animations.Install-Method": "Apc Customize UI++",
+   "apc.imports": [
+      "file:///c:/Users/owner/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.2/dist/updateHandler.js"
+   ],
+   "git.ignoreRebaseWarning": true,
+   "python.testing.pytestArgs": [
+      "tests"
+   ],
+   "python.testing.unittestEnabled": false,
+   "python.testing.pytestEnabled": true,
+   "notebook.output.lineHeight": 2,
+}

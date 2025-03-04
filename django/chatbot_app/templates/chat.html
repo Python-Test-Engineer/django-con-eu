@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Chatbot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <script src="https://unpkg.com/htmx.org@1.9.4"
+    integrity="sha384-zUfuhFKKZCbHTY6aRR46gxiqszMk5tcHjsVFxnUo8VMus4kHGVdIYVbOYYNlKmHV"
+    crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: Raleway, sans-serif;
+      font-size: 24px;
+      background-color: #2f2f2f;
+      color: #ffffff;
+    }
+
+    /* Style for the loading spinner */
+    .my-indicator {
+      display: none;
+      border: 2px solid #f3f3f3;
+      border-top: 2px solid #3498db;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      animation: spin 0.5s linear infinite;
+    }
+
+    .htmx-request .my-indicator {
+      display: inline-block;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .user-message {
+      color: rgb(232, 228, 226);
+
+      padding: 5px;
+    }
+
+    .bot-message {
+      padding: 5px;
+      color: #ffffff;
+      ;
+    }
+
+    input[type="text"] {
+      border-radius: 10px;
+      width: 700px;
+      margin-top: 20px;
+      margin-bottom: 70px;
+      padding: 10px 20px;
+      font-size: 20px;
+    }
+
+    #container {
+
+      width: 800px;
+      height: 100vh;
+      margin: 10px auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .send-button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #4c75af;
+      color: #fff;
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+      cursor: pointer;
+    }
+
+    .send-button:hover {
+      background-color: #3e8e41;
+    }
+
+    ::placeholder {
+      color: #666;
+      /* placeholder text color */
+      font-size: 22px;
+      /* placeholder font size */
+      font-style: italic;
+      /* placeholder font style */
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <div id="chatbox">
+      {% for message in messages %}
+      <div class="user-message">
+        <span style="font-weight: bold;color: orange;">User:</span> {{ message.user_message }}
+      </div>
+      <div class="bot-message"><span style="font-weight: bold;color: rgb(99, 227, 99);">Assistant:</span>
+        {{ message.bot_message }}
+      </div>
+      {% endfor %}
+      <!-- <button type="submit">Send</button> -->
+    </div>
+
+    <form hx-post="{% url 'chat_view' %}" hx-target="#container" hx-swap="innerHTML">
+      {% csrf_token %}
+      <div class="my-indicator"></div>
+      <div class="input-fields">
+        <input type="text" name="message" placeholder="Ask me a question... " />
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>
