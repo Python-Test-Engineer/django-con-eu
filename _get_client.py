@@ -25,8 +25,8 @@ def get_llm_client(llm_choice):
 
 if __name__ == "__main__":
     # Example usage:
-    llm_choice = "openai"
-    # llm_choice = "groq"
+    # llm_choice = "openai"
+    llm_choice = "groq"
     if llm_choice == "groq":
         model = "llama-3.3-70b-versatile"
     else:
@@ -36,37 +36,12 @@ if __name__ == "__main__":
     You are an assistant that is great at telling jokes.
     """
 
-    # Here is where we can do some prompt engineering - we are adding to the system message and creating our endpoint as it were.
-    prompt_engineering = """
-    A joke worthy of publishing is a joke that has a rating of 8.5/10 or above.
-
-    If the joke is worthy of publishing also include next: PUBLISH otherwise next: RETRY
-
-    # Example
-
-    Here is an example of a joke worth of publishing:
-
-    Supply the response in the following JSON format:
-
-    {"setup": "The setup of the joke",
-    "punchline": "The punchline of the joke",   
-    "rating": "9.0",
-    "next": "PUBLISH"}
-
-    Remove all back ticks and other unnecessary characters and just print the JSON format and nothing else.
-
-    Please ensure jokes are not repeated on retries.
-
-    """
-
-    # We add the prompt engineering to the system message
-    system_message += prompt_engineering
-
     # We create our user prompt and will add all of these to the payload.
-    user_prompt = "Tell a light-hearted joke for an audience of Pythonistas"
+    user_prompt = "Give me a general joke with your rating."
 
     client = get_llm_client(llm_choice)
-    print(client)
+    print(f"Always an OpenAI Client:\n {client} - {type(client)}")
+    print("")
 
     response = client.chat.completions.create(
         model=model,
@@ -79,4 +54,5 @@ if __name__ == "__main__":
     answer = response.choices[0].message.content.strip()
     print(f"LLM Choice: {llm_choice}")
     print(f"Model: {model}")
+    print("\nRESPONSE")
     print(answer)
