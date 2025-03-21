@@ -6,18 +6,51 @@ from rich.console import Console
 console = Console()
 
 
-# See card in ipynb version...
-
+# Load environment variables in a file called .env
+# Print the key prefixes to help with any debugging
 load_dotenv()
-openai_api_key = os.getenv("OPENAI_API_KEY")
 
-if openai_api_key:
-    print(f"OpenAI API Key exists and begins:{openai_api_key[:14]}...")
+
+def get_llm_client(llm_choice):
+    if llm_choice == "GROQ":
+        client = OpenAI(
+            base_url="https://api.groq.com/openai/v1",
+            api_key=os.environ.get("GROQ_API_KEY"),
+        )
+        return client
+    elif llm_choice == "OPENAI":
+        load_dotenv()  # load environment variables from .env fil
+        client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+        return client
+    else:
+        raise ValueError("Invalid LLM choice. Please choose 'GROQ' or 'OPENAI'.")
+
+
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+
+LLM_CHOICE = "OPENAI"
+# LLM_CHOICE = "GROQ"
+
+if OPENAI_API_KEY:
+    print(f"OPENAI_API_KEY exists and begins {OPENAI_API_KEY[:14]}...")
 else:
-    print("OpenAI API Key not set")
+    print("OPENAI_API_KEY not set")
 
-client = OpenAI()
-MODEL = "gpt-4o-mini"
+if GROQ_API_KEY:
+    print(f"GROQ_API_KEY exists and begins {GROQ_API_KEY[:14]}...")
+else:
+    print("GROQ_API_KEY not set")
+
+
+client = get_llm_client(LLM_CHOICE)
+if LLM_CHOICE == "GROQ":
+    MODEL = "llama-3.3-70b-versatile"
+else:
+    MODEL = "gpt-4o-mini"
+
+print(f"LLM_CHOICE: {LLM_CHOICE} - MODEL: {MODEL}")
+# See card in ipynb version...
 
 
 def get_product_price(product):
@@ -152,7 +185,7 @@ def loop(max_iterations=10, prompt: str = ""):
 
 # Let's run it...
 
-loop(prompt="What is cost of a laptop including VAT?")
+loop(prompt="What is cost of a bike including VAT?")
 
 # NB We used
 # 'THOUGHT: I need to calculate the total including the VAT|ACTION|calculate_total|200' a
