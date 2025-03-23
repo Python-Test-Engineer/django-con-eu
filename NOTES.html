@@ -261,20 +261,18 @@
     my NOTES and the NOTEBOOKS to clarify matters.</p>
   <p>The talk will be mostly code walkthroughs with notebooks that have a
     lot of comments for completeness and clarification.</p>
-  <h2 id="caveat">Caveat</h2>
-  <ul>
-    <li>This talk takes place in Feb 2025 and models and the landscape
-      change very quickly.</li>
-    <li>The aim of this talk is to <strong>demystify</strong> and
-      <strong>simplify</strong> AI Agents and AI Programming because it can
-      seem like it is another different world of dev or that it is either
-      fully AI or not at all. We can’t have ‘a bit of AI’ in our app. -There
-      may be edge cases and I have avoided these to avoid making the talk more
-      complex than it needs to be for its aims.
-    </li>
-    <li>Not production code.</li>
-    <li>We will focus on the CHAT completion API.</li>
-  </ul>
+  <h2 id="aim">Aim</h2>
+  <ol type="1">
+    <li>To show that AI based apps need not be all AI or not at all, but we
+      can have ‘a bit of AI in our apps’.</li>
+    <li>To demystify and simplify AI Agents and AI Programming because it
+      can seem like it is another different world of dev.</li>
+    <li>To see that it can be just ‘AI as API’, albeit a very magical
+      API.</li>
+  </ol>
+  <p>The Django implementation is a matter of copying over the Python code
+    we will be exploring in the notebooks and using its response as context
+    for a view in this Django app.</p>
   <h3 style="color:#DB4C00;">
     Let's look at where Agentic Apps differ from regular apps and perhaps we may see that AI Agents are everyday Python
     with LLM API calls.
@@ -317,6 +315,12 @@
   <p>!<img src="./images/paper-tape.jpg" width="400"></p>
   <p>https://en.wikipedia.org/wiki/Punched_tape#/media/File:Creed_model_6S-2_paper_tape_reader.jpg</p>
   <p>…cut and paste was cut and paste!</p>
+  <h1 id="demo-django-app">Demo Django App</h1>
+  <p>We will look at a demo Django app that uses AI Agents to call LLMs.
+    It is a chatbot style but could be a text field in a form that has
+    Natural Language.</p>
+  <p>I will show you the view so that you can see that implementing AI
+    Agents is regular Python programming.</p>
   <h1 id="what-are-ai-agents">What are AI Agents?</h1>
   <p>There are many definitions:</p>
   <h2 id="anthropic">Anthropic</h2>
@@ -336,7 +340,7 @@
   <p>We can see that there are many examples of AI Agent Frameworks and
     they seem to increase each week.</p>
   <p>At the beginning of the year it was in the 700s.</p>
-  <h2 id="aim">Aim</h2>
+  <h2 id="demystify-and-simplify">Demystify and simplify</h2>
   <p>What I would like to achieve in this talk is to
     <strong>demystify</strong> and <strong>simplify</strong> AI Agents and
     AI Programming because it can seem like it is another different world of
@@ -388,7 +392,7 @@
   <p>The function might be a variation on the Agent we are using or it may
     be another Agent that accepts the opuput as input. No different to
     Python Classes/Functions in an App.</p>
-  <img src="./INPUT_OUTPUT.png" width=1000px>
+  <img src="./100_INPUT_OUTPUT.png" width=1000px>
 
   <p>The <code>function</code> might be a Python function or a class.</p>
   <p>Before we go into some code examples, we will refresh ourselves that
@@ -556,7 +560,7 @@ response = requests.post(
     Routers, Functions - is quite arbitrary and merely a convenience for
     what works for us. At the end of the day, everything in Python is an
     OBJECT, so we can use whatever we want.</p>
-  <p><img src="./ESSENCE.png" alt="ESSENCE" /></p>
+  <p><img src="./101_ESSENCE.png" alt="ESSENCE" /></p>
   <h1 id="tools">TOOLS</h1>
   <p>AI Agents may need to get extra information by running functions.
     This is called ‘tool/function calling’ and is just a function call as in
@@ -580,7 +584,7 @@ response = requests.post(
     ‘information extraction’. We will see this in
     <code>06_information_extraction.ipynb</code>.
   </p>
-  <p><img src="./ESSENCE.png" alt="ESSENCE" /></p>
+  <p><img src="./101_ESSENCE.png" alt="ESSENCE" /></p>
   <p>I bring this up again as I came across this extraction pattern in an
     example of ‘Teachable Agents’. This sounded very futuristic but looking
     at the code, it is information extraction that can be stored in short
@@ -596,7 +600,7 @@ response = requests.post(
   <p>We have seen examples of these in this talk, bar a multi-agent
     pattern.</p>
   <h2 id="reflection-pattern">REFLECTION PATTERN</h2>
-  <p><img src="./INPUT_OUTPUT.png" alt="REFLECTION" /></p>
+  <p><img src="./100_INPUT_OUTPUT.png" alt="REFLECTION" /></p>
   <p>input -&gt; function(input) -&gt; output -&gt; function(output) -&gt;
     output2</p>
   <p>We generate a response with our first query using a system prompt to
@@ -626,7 +630,7 @@ response = requests.post(
   </p>
   <h1 id="when-might-we-use-llmsagents">When might we use
     LLMs/Agents?</h1>
-  <p><img src="./WHEN.png" alt="open-ai" /></p>
+  <p><img src="./102_WHEN.png" alt="open-ai" /></p>
   <h2 id="multi-agent">MULTI AGENT</h2>
   <h3 id="libraries">Libraries</h3>
   <p>I like to think of Libraries as frameworks without the framework! By
@@ -658,6 +662,8 @@ response = requests.post(
   <p>And there are many low/no code versions as we saw in the <a
       href="https://aiagentsdirectory.com/category/ai-agents-frameworks">AI
       Agents Directory</a></p>
+  <h1 id="testing-and-evaluation">Testing and Evaluation</h1>
+  <p>info here</p>
   <h1 id="summary">Summary</h1>
   <p>I hope AI Agents have been demystified and helped us understand what
     they can do, enabling us to either build our own frameworks or use
