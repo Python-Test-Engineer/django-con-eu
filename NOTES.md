@@ -18,14 +18,13 @@ And I will be using NOTES.md/NOTES.html for this talk so you can follow along wi
 
 The talk will be mostly code walkthroughs with notebooks that have a lot of comments for completeness and clarification.
 
-## Caveat
+## Aim 
 
-- This talk takes place in Feb 2025 and models and the landscape change very quickly. 
-- The aim of this talk is to **demystify** and **simplify** AI Agents and AI Programming because it can seem like it is another different world of dev or that it is either fully AI or not at all. We can't have 'a bit of AI' in our app.
--There may be edge cases and I have avoided these to avoid making the talk more complex than it needs to be for its aims.
-- Not production code.
-- We will focus on the CHAT completion API.
+1. To show that AI based apps need not be all AI or not at all, but we can have 'a bit of AI in our apps'.
+2. To demystify and simplify AI Agents and AI Programming because it can seem like it is another different world of dev.
+3. To see that it can be just 'AI as API', albeit a very magical API.
 
+The Django implementation is a matter of copying over the Python code we will be exploring in the notebooks and using its response as context for a view in this Django app.
 
 <h3 style="color:#DB4C00;">
  Let's look at where Agentic Apps differ from regular apps and perhaps we may see that AI Agents are everyday Python with LLM API calls.
@@ -81,6 +80,13 @@ https://en.wikipedia.org/wiki/Punched_tape#/media/File:Creed_model_6S-2_paper_ta
 
 ...cut and paste was cut and paste!
 
+# Demo Django App
+
+We will look at a demo Django app that uses AI Agents to call LLMs. It is a chatbot style but could be a text field in a form that has Natural Language.
+
+I will show you the view so that you can see that implementing AI Agents is regular Python programming.
+
+
 # What are AI Agents?
 
 There are many definitions:
@@ -108,7 +114,7 @@ We can see that there are many examples of AI Agent Frameworks and they seem to 
 
 At the beginning of the year it was in the 700s.
 
-## Aim
+## Demystify and simplify
 
 What I would like to achieve in this talk is to **demystify** and **simplify** AI Agents and AI Programming because it can seem like it is another different world of dev. 
 
@@ -151,7 +157,7 @@ For the purpose of this talk I will use the term `function` in the mathematical 
 
 The function might be a variation on the Agent we are using or it may be another Agent that accepts the opuput as input. No different to Python Classes/Functions in an App.
 
-<img src="./INPUT_OUTPUT.png" width=1000px>
+<img src="./100_INPUT_OUTPUT.png" width=1000px>
 
 The `function` might be a Python function or a class. 
 
@@ -294,7 +300,7 @@ We will take a look at this later.
 
 I think we can see that what we call these things - Agents, Tools, Routers, Functions - is quite arbitrary and merely a convenience for what works for us. At the end of the day, everything in Python is an OBJECT, so we can use whatever we want.
 
-![ESSENCE](./ESSENCE.png)
+![ESSENCE](./101_ESSENCE.png)
 
 # TOOLS
 
@@ -318,7 +324,7 @@ Function is run on our 'box' - we continue to add messages to our list of messag
 
 We can use the LLM to extract data from a document. This is called 'information extraction'. We will see this in `06_information_extraction.ipynb`. 
 
-![ESSENCE](./ESSENCE.png)
+![ESSENCE](./101_ESSENCE.png)
 
 I bring this up again as I came across this extraction pattern in an example of 'Teachable Agents'. This sounded very futuristic but looking at the code, it is information extraction that can be stored in short term memory - app level cache - or long term menory - stored in a DB for example and retrieved as needed and added to the SYSTEM MESSAGE.
 
@@ -336,7 +342,7 @@ We have seen examples of these in this talk, bar a multi-agent pattern.
 
 ## REFLECTION PATTERN
 
-![REFLECTION](./INPUT_OUTPUT.png)
+![REFLECTION](./100_INPUT_OUTPUT.png)
 
 input -> function(input) -> output -> function(output) -> output2
 
@@ -366,7 +372,7 @@ To get a sense of how it works, look at `20_planning_agent_w_loop.py` as we can 
 
 # When might we use LLMs/Agents?
 
-![open-ai](./WHEN.png)
+![open-ai](./102_WHEN.png)
 
 ## MULTI AGENT
 
@@ -402,6 +408,10 @@ AutoGen
 CrewAI
 
 And there are many low/no code versions as we saw in the [AI Agents Directory](https://aiagentsdirectory.com/category/ai-agents-frameworks)
+
+# Testing and Evaluation
+
+info here
 
 # Summary
 
