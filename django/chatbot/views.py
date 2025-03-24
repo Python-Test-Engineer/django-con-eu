@@ -32,7 +32,9 @@ print()
 console.print(f"[cyan]GROQ_API_KEY: {GROQ_API_KEY[:14]}...[/cyan]")
 
 # We add in our own system message
-system_message = """You are a helpful assistant for the Django Conference. Be brief but complete."""
+system_message = (
+    """You are a helpful assistant for the Django Conference. Be brief but complete."""
+)
 
 # We add our own supplementary facts, this is RAG in that we are AUGMENTING our GENERATION through the use of RETRIEVAL - in this case it is a list but this wouldbe obtained from DB queries etc...
 FAQ = [
@@ -97,7 +99,7 @@ def ask_groq(message):
     response = client.chat.completions.create(
         model="llama-3.3-70b-versatile",
         messages=[
-            {"role": "system", "content": "You are an helpful assistant."},
+            {"role": "system", "content": system_message},
             {"role": "user", "content": message},
         ],
     )
@@ -112,8 +114,11 @@ def chatbot(request):
     if request.method == "POST":
         message = request.POST.get("message")
         # REFACTORING better so that we can set choice of LLM once in a config file but not done for this demo.
-        response = ask_openai(message)
-        # response = ask_groq(message)
+        ################################
+        # SELECT LLM
+        # response = ask_openai(message)
+        response = ask_groq(message)
+        ################################
 
         chat = Chat(
             user=request.user,
