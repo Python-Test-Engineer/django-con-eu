@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>BrightonPy FEB2025</title>
+  <title>DJANGO EU Conference</title>
   <style>
     html {
       color: #1a1a1a;

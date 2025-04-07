@@ -8,7 +8,7 @@ The repo containing all the materials is here:
 
 or
 
-[https://github.com/Python-Test-Engineerbtnpy](https://github.com/Python-Test-Engineer/btnpy) (direct)
+[https://github.com/Python-Test-Engineer/django-con-eu](https://github.com/Python-Test-Engineer/django-con-eu) (direct)
 
 All links used are in LINKS.md
 
@@ -70,7 +70,7 @@ Just got a Red Fox Labrador Pup Leo, (much earlier than planned):
 
 We have a local red fox that is apt to follow us...
 
-<img src="./images/leo-fox-2.png" width="200px" >
+<img src="./images/leo-fox-daylight-2.png" width="400px" >
 
 ### My first computer 1979
 
