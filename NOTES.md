@@ -368,7 +368,7 @@ A powerful pattern is the ReAct (Reason-Act) pattern.
 
 This can be viewed of as Multi-Step. Let's go through the code.
 
-To get a sense of how it works, look at `20_planning_agent_w_loop.py` as we can get a high level overview of the code, whereas `20_planning_agent_no_loop.ipynb` needs more of a walk through.
+To get a sense of how it works, look at `09_OPENAI_planning_agent_w_loop.py` as we can get a high level overview of the code, whereas `08_OPENAI_planning_agent_no_loop.ipynb` needs more of a walk through.
 
 # When might we use LLMs/Agents?
 
