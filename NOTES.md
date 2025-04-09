@@ -411,9 +411,22 @@ And there are many low/no code versions as we saw in the [AI Agents Directory](h
 
 # Testing and Evaluation
 
-info here
+We need a set of Ground Truths for various inputs for our workflow as well as a set of Ground Truths for tools and other functions used within an agent.
 
-# Summary
+Similar principles to regular testing but if the outputs are unstructured text then we need to find a way to verify accuracy. LLM as Judge or Human Evaluation can be used.
+
+The ROUTER example can be tested to see if the right report is selected for a set of Ground Truths.
+
+The FAQ example can be tested to see if answers to questions are correct. 
+
+![testing](./103_TESTS.png)
+
+## https://ai-powered-knowledge-systems.netlify.app/evaluation/overview/
+
+Useful article: [LLM as Judge](https://medium.com/towards-generative-ai/judgeit-automating-rag-evaluation-using-llm-as-a-judge-d7c10b3f2eeb)
+
+
+## Summary
 
 I hope AI Agents have been demystified and helped us understand what they can do, enabling us to either build our own frameworks or use existing ones, with a deeper appreciation and understanding of how they work.
 
