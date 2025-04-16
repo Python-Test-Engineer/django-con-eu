@@ -1,74 +1,80 @@
-**API Request with Requests Library**
+**API Request Using Requests Library**
 =====================================
 
-Below is a Python implementation using the Requests library to send a GET request to a specified API endpoint.
+Below is an example implementation of requesting an API using the Requests library in Python.
+
+### Installation
+
+Before using the Requests library, ensure it's installed. You can install it via pip:
+
+```bash
+pip install requests
+```
+
+### Implementation
 
 ```python
 import requests
 import json
 
-def send_api_request(url: str, method: str = 'GET', params: dict = None, headers: dict = None, data: dict = None):
+def make_api_request(url, method='GET', headers=None, params=None, data=None):
     """
-    Sends an API request to the specified endpoint.
+    Makes an API request using the Requests library.
 
     Args:
     - url (str): The URL of the API endpoint.
-    - method (str): The HTTP method to use (default is 'GET').
+    - method (str): The HTTP method (default is 'GET').
+    - headers (dict): A dictionary of headers (default is None).
     - params (dict): A dictionary of query parameters (default is None).
-    - headers (dict): A dictionary of HTTP headers (default is None).
     - data (dict): A dictionary of data to be sent in the request body (default is None).
 
     Returns:
-    - response (requests.Response): The response object from the API request.
+    - response (requests.Response): The API response.
     """
 
-    # Create a dictionary to store the request parameters
-    request_params = {
-        'method': method,
-        'url': url,
-        'params': params,
-        'headers': headers,
-        'json': data
+    # Map the method to the corresponding Requests function
+    methods = {
+        'GET': requests.get,
+        'POST': requests.post,
+        'PUT': requests.put,
+        'DELETE': requests.delete
     }
 
+    # Check if the method is valid
+    if method.upper() not in methods:
+        raise ValueError(f"Invalid method '{method}'. Supported methods are {list(methods.keys())}")
+
+    # Make the API request
     try:
-        # Send the API request
-        response = requests.request(**request_params)
-
-        # Check if the request was successful
-        response.raise_for_status()
-
+        response = methods[method.upper()](url, headers=headers, params=params, json=data)
+        response.raise_for_status()  # Raise an exception for 4xx or 5xx status codes
         return response
-
     except requests.exceptions.RequestException as e:
-        # Handle any exceptions that occur during the request
-        print(f"An error occurred: {e}")
+        print(f"Request failed: {e}")
         return None
 
 
-# Example usage:
-if __name__ == "__main__":
-    url = 'https://jsonplaceholder.typicode.com/posts'
-    response = send_api_request(url)
+def main():
+    # Example usage
+    url = "https://jsonplaceholder.typicode.com/posts"
+    response = make_api_request(url)
 
     if response:
-        # Print the response text
-        print(response.text)
+        print(json.dumps(response.json(), indent=4))
 
-        # Parse the response as JSON
-        json_data = response.json()
-        print(json.dumps(json_data, indent=4))
+
+if __name__ == "__main__":
+    main()
 ```
 
-**Best Practices:**
+### Explanation
 
-1. **Use Meaningful Variable Names:** The code uses meaningful variable names like `url`, `method`, `params`, `headers`, and `data` to improve readability.
-2. **Handle Exceptions:** The code includes exception handling to catch any errors that might occur during the API request.
-3. **Type Hints:** The function parameters and return types are annotated with type hints to improve code readability and facilitate type checking.
-4. **Example Usage:** The code includes an example usage section to demonstrate how to use the `send_api_request` function.
+*   This code defines a `make_api_request` function that takes in the API URL, HTTP method, headers, query parameters, and request body data.
+*   It uses the Requests library to make the API request based on the provided method and parameters.
+*   The `main` function demonstrates how to use `make_api_request` to fetch data from a sample API endpoint.
 
-**Security Considerations:**
+### Advice
 
-1. **Validate User Input:** Always validate and sanitize user input to prevent potential security vulnerabilities like SQL injection or cross-site scripting (XSS).
-2. **Use HTTPS:** Use HTTPS (SSL/TLS) to encrypt the communication between the client and server and protect sensitive data.
-3. **Handle Sensitive Data:** Handle sensitive data like API keys, authentication tokens, or user credentials securely and never hardcode them in the code.
+*   Always handle potential exceptions when making API requests.
+*   Use the `response.raise_for_status()` method to raise an exception for 4xx or 5xx status codes.
+*   Consider logging or printing error messages for debugging purposes.
