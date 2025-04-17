@@ -5,7 +5,7 @@
    "window.zoomLevel": 1,
    "editor.fontSize": 18,
    "editor.lineHeight": 25,
-   "terminal.integrated.fontSize": 20,
+   "terminal.integrated.fontSize": 18,
    "python.terminal.activateEnvironment": true,
    "editor.renderLineHighlight": "all",
    "editor.renderWhitespace": "selection",
