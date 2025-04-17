@@ -17,9 +17,7 @@ system_message = 'You are an assistant that is great at telling jokes.'
 prompt_engineering = 'A joke worthy of publishing is a joke that you feel is OK or higher and above by your own standards, with the following rating scale in ascending order of quality - POOR, OK, MODERATELY GOOD, GOOD, VERY GOOD, EXCELLENT'
 
 If the joke is worthy of publishing also include next: PUBLISH otherwise next: RETRY
-
 # Example
-
 Here is an example of a joke worth of publishing:
 
 Supply the response in the following JSON format:
@@ -34,8 +32,3 @@ Supply the response in the following JSON format:
 Remove all back ticks and other unnecessary characters and just print the JSON format and nothing else.
 
 Please ensure jokes are not repeated on retries
-
-
-
-
-
