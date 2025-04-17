@@ -1,80 +1,68 @@
-**API Request Using Requests Library**
-=====================================
+### Requesting an API with the Requests Library
+#### Introduction
+This implementation demonstrates how to send a GET request to an API endpoint using the popular Requests library in Python.
 
-Below is an example implementation of requesting an API using the Requests library in Python.
+#### Prerequisites
+* Python 3.7+
+* Requests library (install with `pip install requests`)
 
-### Installation
-
-Before using the Requests library, ensure it's installed. You can install it via pip:
-
-```bash
-pip install requests
-```
-
-### Implementation
+#### Implementation
 
 ```python
 import requests
 import json
 
-def make_api_request(url, method='GET', headers=None, params=None, data=None):
+def send_get_request(url, headers=None, params=None):
     """
-    Makes an API request using the Requests library.
+    Sends a GET request to the specified URL.
 
     Args:
     - url (str): The URL of the API endpoint.
-    - method (str): The HTTP method (default is 'GET').
-    - headers (dict): A dictionary of headers (default is None).
-    - params (dict): A dictionary of query parameters (default is None).
-    - data (dict): A dictionary of data to be sent in the request body (default is None).
+    - headers (dict, optional): A dictionary of headers to include in the request. Defaults to None.
+    - params (dict, optional): A dictionary of query parameters to include in the request. Defaults to None.
 
     Returns:
-    - response (requests.Response): The API response.
+    - response (requests.Response): The response object from the Requests library.
     """
-
-    # Map the method to the corresponding Requests function
-    methods = {
-        'GET': requests.get,
-        'POST': requests.post,
-        'PUT': requests.put,
-        'DELETE': requests.delete
-    }
-
-    # Check if the method is valid
-    if method.upper() not in methods:
-        raise ValueError(f"Invalid method '{method}'. Supported methods are {list(methods.keys())}")
-
-    # Make the API request
     try:
-        response = methods[method.upper()](url, headers=headers, params=params, json=data)
-        response.raise_for_status()  # Raise an exception for 4xx or 5xx status codes
+        response = requests.get(url, headers=headers, params=params)
+        response.raise_for_status()  # Raise an exception for HTTP errors
         return response
     except requests.exceptions.RequestException as e:
-        print(f"Request failed: {e}")
+        print(f"An error occurred: {e}")
         return None
-
 
 def main():
     # Example usage
     url = "https://jsonplaceholder.typicode.com/posts"
-    response = make_api_request(url)
+    headers = {
+        "Accept": "application/json"
+    }
+    params = {
+        "userId": 1
+    }
 
-    if response:
+    response = send_get_request(url, headers, params)
+
+    if response is not None:
+        print("Response Status Code:", response.status_code)
+        print("Response Headers:")
+        print(json.dumps(dict(response.headers), indent=4))
+        print("Response Content:")
         print(json.dumps(response.json(), indent=4))
-
 
 if __name__ == "__main__":
     main()
 ```
 
-### Explanation
+#### Explanation
+* The `send_get_request` function takes in a URL, optional headers, and optional query parameters.
+* It sends a GET request to the specified URL using the Requests library.
+* The `response.raise_for_status()` line raises an exception if the HTTP request returns an unsuccessful status code.
+* The `main` function demonstrates example usage of the `send_get_request` function, including handling errors and printing the response status code, headers, and content.
 
-*   This code defines a `make_api_request` function that takes in the API URL, HTTP method, headers, query parameters, and request body data.
-*   It uses the Requests library to make the API request based on the provided method and parameters.
-*   The `main` function demonstrates how to use `make_api_request` to fetch data from a sample API endpoint.
-
-### Advice
-
-*   Always handle potential exceptions when making API requests.
-*   Use the `response.raise_for_status()` method to raise an exception for 4xx or 5xx status codes.
-*   Consider logging or printing error messages for debugging purposes.
+#### Advice
+* Always handle potential exceptions when working with external APIs.
+* Use the `response.raise_for_status()` method to raise an exception for HTTP errors.
+* Use the `requests.exceptions.RequestException` class to catch any exceptions that occur during the request.
+* Consider adding logging and error tracking to your production code.
