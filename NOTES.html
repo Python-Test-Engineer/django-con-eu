@@ -264,16 +264,22 @@
     lot of comments for completeness and clarification.</p>
   <h2 id="aim">Aim</h2>
   <ol type="1">
-    <li>To show that AI based apps need not be all AI or not at all, but we
-      can have ‘a bit of AI in our apps’.</li>
-    <li>To demystify and simplify AI Agents and AI Programming because it
-      can seem like it is another different world of dev.</li>
     <li>To see that it can be just ‘AI as API’, albeit a very magical
       API.</li>
+    <li>To show that AI based apps need not be all AI or not at all, but we
+      can have ‘a bit of AI in our apps’.</li>
+    <li>To show that it is ‘business as usual’ as Pythonistas, using our
+      experience and skills to create AI Apps.</li>
   </ol>
   <p>The Django implementation is a matter of copying over the Python code
     we will be exploring in the notebooks and using its response as context
     for a view in this Django app.</p>
+  <h1 id="demo">Demo</h1>
+  <p>I took information from the Conference website and used the code, ( a
+    copy and paste), from <code>03_faq_ipynb</code> to provide a help
+    chatbot…</p>
+  <p>“what is a sprint and when does it take place - also I am not an
+    expert coder does that matter?”</p>
   <h3 style="color:#DB4C00;">
     Let's look at where Agentic Apps differ from regular apps and perhaps we may see that AI Agents are everyday Python
     with LLM API calls.
@@ -664,10 +670,20 @@ response = requests.post(
       href="https://aiagentsdirectory.com/category/ai-agents-frameworks">AI
       Agents Directory</a></p>
   <h1 id="testing-and-evaluation">Testing and Evaluation</h1>
+  <p>We need a set of Ground Truths for various inputs for our workflow as
+    well as a set of Ground Truths for tools and other functions used within
+    an agent.</p>
+  <p>Similar principles to regular testing but if the outputs are
+    unstructured text then we need to find a way to verify accuracy. LLM as
+    Judge or Human Evaluation can be used.</p>
+  <p>The ROUTER example can be tested to see if the right report is
+    selected for a set of Ground Truths.</p>
+  <p>The FAQ example can be tested to see if answers to questions are
+    correct.</p>
   <p><img src="./103_TESTS.png" alt="testing" /></p>
   <h2 id="httpsai-powered-knowledge-systemsnetlifyappevaluationoverview">
     https://ai-powered-knowledge-systems.netlify.app/evaluation/overview/</h2>
-  <p><a
+  <p>Useful article: <a
       href="https://medium.com/towards-generative-ai/judgeit-automating-rag-evaluation-using-llm-as-a-judge-d7c10b3f2eeb">LLM
       as Judge</a></p>
   <h2 id="summary">Summary</h2>
