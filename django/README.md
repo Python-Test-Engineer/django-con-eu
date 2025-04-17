@@ -1,12 +1,6 @@
-# Django ChatGPT Chatbot
+# Django Chatbot
 
-## OpenAI Key
-
-*Ensure you login first with admin/password in admin site.*
-
-admin and password
-
-Then go to [site](http://127.0.0.1:8000/).
+*You will need an OpenAI or Groq API key. *
 
 This works with OpenAI Key saved in the .env file.
 
@@ -14,9 +8,7 @@ Rename `.env.sample` to `.env` and supply your OpenAI Key.
 
 Usual Django set up - this works with `python manage.py runserver` with admin/password as credentials.
 
-Go to (http://127.0.0.1:8000/)/admin and login then go to http://127.0.0.1:8000/ - if not logged in then error occurs in this demo.
-
-use `admin` and `password`
+Go to http://127.0.0.1:8000/admin and login - use `admin` and `password` - then go to http://127.0.0.1:8000/ - if not logged in then error occurs in this demo.
 
 The app 'chatbot' with views.py is the example we used of FAQ.
 
