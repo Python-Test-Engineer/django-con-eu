@@ -95,7 +95,9 @@ class Agent:
 system_prompt = """
 You run in a loop of THOUGHT, ACTION, OBSERVATION.
 
-You have two tools available for your ACTIONS - calculate_total and get_product_price so that you can get the total price of an item requested by the user.
+You have a THOUGHT of what you need to do, then you take an ACTION using tools provided, then you get an OBSERVATION. YOu keep repeating this until you have an ANSWER. Then you return the ANSWER and break out of the loop.
+
+You have two tools available for your ACTIONS - **calculate_total** and **get_product_price** so that you can get the total price of an item requested by the user.
 
 # 1. calculate_total:
 
@@ -164,8 +166,10 @@ def loop(max_iterations=10, prompt: str = ""):
             #
             if next_function in tools:
                 result_tool = eval(f"{next_function}('{next_arg}')")
+                ######################################
                 # OBSERVATIONS passed back into prompt in the format OBSERVATION|result as specified in prompt template
                 prompt = f"OBSERVATION: {result_tool}"
+                ######################################
                 console.print(f"[green]{prompt}[/]")
                 print("------------------------------\n")
             else:
@@ -185,7 +189,8 @@ def loop(max_iterations=10, prompt: str = ""):
 
 # Let's run it...
 
-loop(prompt="What is cost of a bike including VAT?")
+# loop(prompt="What is cost of a bike including VAT?")
+loop(prompt="What is cost of a laptop including VAT?")
 
 # NB We used
 # 'THOUGHT: I need to calculate the total including the VAT|ACTION|calculate_total|200' a
