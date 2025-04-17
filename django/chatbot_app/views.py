@@ -18,12 +18,52 @@ system_message = "You are a helpful assistant for a shoe store. If a user asks a
 
 # We add our own supplementary facts, this is RAG in that we are AUGMENTING our GENERATION through the use of RETRIEVAL - in this case it is a list but this wouldbe obtained from DB queries etc...
 FAQ = [
-    "We only sell shoes.",
-    "Our opening hours are Monday to Friday from 9am to 5pm.",
-    "We are located at 123 Main Street, Brighton",
-    "We specialise in red shoes but have all colours",
-    "Our VAT rate is 20 percent and is applicable on all sales",
-    "We only accept card payments",
+    "DjangoCon 2025 is taking place in Dublin",
+    "The dates are 23rd-27th April 2025",
+    "The venue is DjangoCon Europe 2025 will be held in Dublin! The capital of the Republic of Ireland, one of Europe’s biggest tech hubs, is a lively city with extraordinarily rich and diverse food, culture, history and art lovers - the number of museums and restaurants can certainly tickle most tastes.",
+    "The conference will take place at Talbot Hotel Stillorgan, Dublin",
+    "As an EU/EEA resident, you do not require a visa to travel to Ireland. You can enter the country freely under the Common Travel Area (CTA) agreements.",
+    """
+    Documents to Carry
+    Even though a visa is not required, ensure you carry:
+    - A valid passport or national ID card.
+    - Proof of accommodation (e.g., hotel bookings or host details).
+    - Your DjangoCon Europe ticket or event confirmation.
+    - Travel insurance (optional but recommended).
+    """,
+    "DjangoCon Europe 2025 offers grants so that those who might otherwise not be able to attend won't hesitate to participate. Some expenses for the conference attendance (which could include travel, hotel, registration, etc) will be covered for opportunity grant recipients.",
+    "The sponsors are Ambient, Caktus, Monit to name but a few.",
+    """
+    Mentorship Program
+    Are you an experienced speaker eager to share your knowledge and guide aspiring speakers? Or are you planning to submit a proposal to DjangoCon Europe 2025 and looking for expert advice to craft a standout submission?
+    If you answered 'yes' to either question, this mentorship program is perfect for you!
+    """,
+    """ 
+    For Mentees This is How the Program Works
+    Our aim is to pair each mentee with a dedicated mentor to foster one-on-one guidance. To simplify scheduling, we prioritize matching participants in the same timezone or country whenever possible.
+    """,
+    """
+    A live recording of a 'The Real Python Podcast' episode with audience participation.
+
+    The Real Python Podcast is a weekly podcast hosted by Christopher Bailey with interviews, coding tips, and conversations with guests from the Python community. Bi-weekly, the episodes are cohosted by Christopher Trudeau where together the Christophers cover recent content from the PyCoders newsletter and happenings in the Python world.
+
+    The DjangoCon session would be similar to PyCoders episodes where we cover interesting recent Python articles. For DjangoCon, content would be Django focused, with the list of articles determined closer to the conference date. Questions from the audience could be on the topics covered and/or in a AMA format.""",
+    """Sprints
+So you have listened to all the exciting topics on django for three days and now feel motivated do something about it. What could be a better motivation than contributing to the very open source software you just listened to?
+
+On Saturday and Sunday, you have the opportunity to do exactly that. This is your opportunity to contribute to Open Source software. Even if you haven't contributed before, this is also an option to take your first steps. In the sprint, you can contribute to Django as you see fit, and if you need help, there will a pool of experienced contributors to guide you.
+
+Main Venue - Hosting our Sprints
+Talbot Hotel Stillorgan
+
+Time
+Saturday - 9AM to 6PM
+Sunday - 9AM to 6PM
+The Sprints are free for all conference participants. However, as the Sprints venue does not have unlimited capacity, and we would like to prepare a precise amount of food and drinks, please keep your participation status updated on the ticketing website (after buying your ticket).
+
+We will be hosting our sprints at Talbot Hotel Stillorgan. Get ready for an amazing conference experience in beautiful Dublin!
+
+Check the map to the venue""",
 ]
 
 # Create the base system message

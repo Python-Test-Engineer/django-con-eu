@@ -20,11 +20,17 @@ The talk will be mostly code walkthroughs with notebooks that have a lot of comm
 
 ## Aim 
 
-1. To show that AI based apps need not be all AI or not at all, but we can have 'a bit of AI in our apps'.
-2. To demystify and simplify AI Agents and AI Programming because it can seem like it is another different world of dev.
-3. To see that it can be just 'AI as API', albeit a very magical API.
+1. To see that it can be just 'AI as API', albeit a very magical API.
+12. To show that AI based apps need not be all AI or not at all, but we can have 'a bit of AI in our apps'.
+3. To show that it is 'business as usual' as Pythonistas, using our experience and skills to create AI Apps.
 
 The Django implementation is a matter of copying over the Python code we will be exploring in the notebooks and using its response as context for a view in this Django app.
+
+# Demo
+
+I took information from the Conference website and used the code, ( a copy and paste), from `03_faq_ipynb` to provide a help chatbot...
+
+"what is a sprint and when does it take place - also I am not an expert coder does that matter?"
 
 <h3 style="color:#DB4C00;">
  Let's look at where Agentic Apps differ from regular apps and perhaps we may see that AI Agents are everyday Python with LLM API calls.

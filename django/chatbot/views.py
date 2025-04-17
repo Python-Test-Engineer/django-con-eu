@@ -68,6 +68,22 @@ FAQ = [
     The Real Python Podcast is a weekly podcast hosted by Christopher Bailey with interviews, coding tips, and conversations with guests from the Python community. Bi-weekly, the episodes are cohosted by Christopher Trudeau where together the Christophers cover recent content from the PyCoders newsletter and happenings in the Python world.
 
     The DjangoCon session would be similar to PyCoders episodes where we cover interesting recent Python articles. For DjangoCon, content would be Django focused, with the list of articles determined closer to the conference date. Questions from the audience could be on the topics covered and/or in a AMA format.""",
+    """Sprints
+So you have listened to all the exciting topics on django for three days and now feel motivated do something about it. What could be a better motivation than contributing to the very open source software you just listened to?
+
+On Saturday and Sunday, you have the opportunity to do exactly that. This is your opportunity to contribute to Open Source software. Even if you haven't contributed before, this is also an option to take your first steps. In the sprint, you can contribute to Django as you see fit, and if you need help, there will a pool of experienced contributors to guide you.
+
+Main Venue - Hosting our Sprints
+Talbot Hotel Stillorgan
+
+Time
+Saturday - 9AM to 6PM
+Sunday - 9AM to 6PM
+The Sprints are free for all conference participants. However, as the Sprints venue does not have unlimited capacity, and we would like to prepare a precise amount of food and drinks, please keep your participation status updated on the ticketing website (after buying your ticket).
+
+We will be hosting our sprints at Talbot Hotel Stillorgan. Get ready for an amazing conference experience in beautiful Dublin!
+
+Check the map to the venue""",
 ]
 
 
