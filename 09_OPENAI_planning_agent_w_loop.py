@@ -137,6 +137,7 @@ ANSWER|The price of the bike including VAT is 240
 """
 
 
+# A bit like recursion, we are going to call the agent in a loop until we get an answer.
 def loop(max_iterations=10, prompt: str = ""):
     agent = Agent(client=client, system=system_prompt)
     tools = ["calculate_total", "get_product_price"]
@@ -152,7 +153,7 @@ def loop(max_iterations=10, prompt: str = ""):
         #
         # -------------------------
         #
-        # Here we loop over ACTIONS getting OBSERVATIONS and continue until we get an ANSWER
+        # Here we loop over responses - if we have a THOUGHT/ACTION, we need to extract the function and arguments - if we have ANSWER, we need to return it and break from loop.
         if "ACTION" in result:
             #
             # extract function and arguments using the fact that we specified th | symbol as the delimiter
@@ -189,8 +190,11 @@ def loop(max_iterations=10, prompt: str = ""):
 
 # Let's run it...
 
-# loop(prompt="What is cost of a bike including VAT?")
-loop(prompt="What is cost of a laptop including VAT?")
+question = "What is cost of a laptop including VAT?"
+console.print(f"\nQuestion is: [cyan italic]{question}\n[/]")  # end of loop
+
+loop(prompt=question)
+
 
 # NB We used
 # 'THOUGHT: I need to calculate the total including the VAT|ACTION|calculate_total|200' a
