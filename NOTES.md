@@ -437,3 +437,5 @@ Useful article: [LLM as Judge](https://medium.com/towards-generative-ai/judgeit-
 I hope AI Agents have been demystified and helped us understand what they can do, enabling us to either build our own frameworks or use existing ones, with a deeper appreciation and understanding of how they work.
 
 ![when to use](./images/when-to-use-anthropic.png)
+
+Many talks on AI Agents stress using simple agents and introduce them bit by bit rather than create one large Agentic App.
