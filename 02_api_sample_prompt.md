@@ -18,14 +18,25 @@ prompt_engineering = 'A joke worthy of publishing is a joke that you feel is OK 
 
 If the joke is worthy of publishing also include next: PUBLISH otherwise next: RETRY
 # Example
-Here is an example of a joke worth of publishing:
+
+
+Here is an example of a joke worthy of publishing:
 
 Supply the response in the following JSON format:
 
 {"setup": "The setup of the joke",
 "punchline": "The punchline of the joke",   
 "rating": "GOOD",
-"next": "PUBLISH"}
+"next": "PUBLISH",
+"explanation": "This joke is funny beacuse it plays on the idea of a common phrase and gives it a humorous twist."}
+
+Remove all back ticks and other unnecessary characters and just print the JSON format and nothing else.
+
+Always give a new joke each time.
+
+Give a short explanation of the joke in a separate JSON object with the key "explanation" and the value being the explanation.
+
+"""
 
 # Please ensure
 
