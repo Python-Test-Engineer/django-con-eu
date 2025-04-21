@@ -26,12 +26,6 @@ The talk will be mostly code walkthroughs with notebooks that have a lot of comm
 
 The Django implementation is a matter of copying over the Python code we will be exploring in the notebooks and using its response as context for a view in this Django app.
 
-# Demo
-
-I took information from the Conference website and used the code, ( a copy and paste), from `03_faq_ipynb` to provide a help chatbot...
-
-"what is a sprint and when does it take place - also I am not an expert coder does that matter?"
-
 <h3 style="color:#DB4C00;">
  Let's look at where Agentic Apps differ from regular apps and perhaps we may see that AI Agents are everyday Python with LLM API calls.
 </h3>
@@ -90,7 +84,9 @@ https://en.wikipedia.org/wiki/Punched_tape#/media/File:Creed_model_6S-2_paper_ta
 
 We will look at a demo Django app that uses AI Agents to call LLMs. It is a chatbot style but could be a text field in a form that has Natural Language.
 
-I will show you the view so that you can see that implementing AI Agents is regular Python programming.
+I took information from the Conference website and used the code, ( a copy and paste), from `03_faq_ipynb` to provide a help chatbot...
+
+"what is a sprint and when does it take place - also I am not an expert coder does that matter?"
 
 
 # What are AI Agents?
