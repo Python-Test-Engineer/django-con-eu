@@ -1,6 +1,6 @@
 # Django Chatbot
 
-*You will need an OpenAI or Groq API key. *
+*You will need an OpenAI or Groq API key.*
 
 This works with OpenAI Key saved in the .env file.
 
