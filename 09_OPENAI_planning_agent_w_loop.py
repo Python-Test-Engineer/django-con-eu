@@ -190,7 +190,7 @@ def loop(max_iterations=10, prompt: str = ""):
 
 # Let's run it...
 
-question = "What is cost of a laptop including VAT?"
+question = "What is cost of a tv including VAT?"
 console.print(f"\nQuestion is: [cyan italic]{question}\n[/]")  # end of loop
 
 loop(prompt=question)
