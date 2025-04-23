@@ -197,9 +197,17 @@ payload = {
    "temperature": temperature, 
 }
 
+Low Temperature:
+The bag is full of mostly blue marbles, with a few red and green. Low temperature means you're very likely to pull a blue marble, but you might occasionally get a red or green.
+
+High Temperature:
+The bag is filled with a mix of colors, and all colors are equally likely. High temperature means you're equally likely to pull any color, including the less common ones.
 # Use HTTP POST method
 response = requests.post(
-   url=model_endpoint, # The API
+   url=model_endpoinLow Temperature:
+The bag is full of mostly blue marbles, with a few red and green. Low temperature means you're very likely to pull a blue marble, but you might occasionally get a red or green.
+High Temperature:
+The bag is filled with a mix of colors, and all colors are equally likely. High temperature means you're equally likely to pull any color, including the less common ones.t, # The API
    headers=headers, # Headers for authentication etc
    data=json.dumps(payload) # The request data we are sending
 ).json()
