@@ -26,6 +26,10 @@ The talk will be mostly code walkthroughs with notebooks that have a lot of comm
 
 The Django implementation is a matter of copying over the Python code we will be exploring in the notebooks and using its response as context for a view in this Django app.
 
+After my introduction, I will demo a Django App that has taken content from the DjangoCon Europe 2025 website and created an AI Assistant chatbot that answers questions about the conference.
+
+It is a very basic implemenation but will show how my aims for the workshop are fulfilled
+
 <h3 style="color:#DB4C00;">
  Let's look at where Agentic Apps differ from regular apps and perhaps we may see that AI Agents are everyday Python with LLM API calls.
 </h3>
