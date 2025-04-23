@@ -21,7 +21,7 @@ The talk will be mostly code walkthroughs with notebooks that have a lot of comm
 ## Aim 
 
 1. To see that it can be just 'AI as API', albeit a very magical API.
-12. To show that AI based apps need not be all AI or not at all, but we can have 'a bit of AI in our apps'.
+2. To show that AI based apps need not be all AI or not at all, but we can have 'a bit of AI in our apps'.
 3. To show that it is 'business as usual' as Pythonistas, using our experience and skills to create AI Apps.
 
 The Django implementation is a matter of copying over the Python code we will be exploring in the notebooks and using its response as context for a view in this Django app.

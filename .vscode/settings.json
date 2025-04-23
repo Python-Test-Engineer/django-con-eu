@@ -144,7 +144,7 @@
    "python.analysis.typeCheckingMode": "strict",
    "python.formatting.provider": "none",
    "editor.autoIndent": "keep",
-   "workbench.colorTheme": "Default High Contrast",
+   "workbench.colorTheme": "Monokai Crete",
    "terminal.integrated.defaultProfile.windows": "PowerShell",
    "animations.Install-Method": "Apc Customize UI++",
    "apc.imports": [
